@@ -1,7 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
 import pandas
-import time
 
 excel_file = input("Pfad zur datei angeben mit /: ")
 df = pandas.read_excel(excel_file, usecols='A:D')
@@ -9,9 +8,9 @@ df = pandas.read_excel(excel_file, usecols='A:D')
 # Verbindung zu SQL server aufbauen
 connec = mysql.connector.connect(
     user='root',
-    password='Pwd.08/15',
+    password='%PassWord%',
     host='127.0.0.1',
-    database='aufgabe'
+    database='%Database'
 )
 try:
     cursor = connec.cursor()
@@ -42,4 +41,4 @@ try:
 
 except mysql.connector.Error as err:
     print(err)
-    print("fck")
+    print("Didnt Work")
