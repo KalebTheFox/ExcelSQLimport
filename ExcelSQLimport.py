@@ -11,7 +11,7 @@ connec = mysql.connector.connect(
     user='%user%',
     password='%password%',
     host='%hostaddres%',
-    database='%database'
+    database='%database%'
 )
 try:
     cursor = connec.cursor()
